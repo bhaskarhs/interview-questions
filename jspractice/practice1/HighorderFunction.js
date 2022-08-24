@@ -1,0 +1,1 @@
+// higherorder function is the function that takes function as parameter and or return a function 

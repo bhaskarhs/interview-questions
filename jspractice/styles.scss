@@ -1,0 +1,19 @@
+$navcolor:lightgray;
+$navfontsize:14px;
+$dropdownfontsize:12px;
+$licolor:#123212;
+h1{
+    color: brown;
+}
+nav{
+    background-color: $navcolor;
+    .main-list{
+        // text-decoration: none;
+        list-style: none;
+        display: flex;
+        justify-content: space-evenly;
+    }
+        li{
+            color: $licolor;
+        }
+}
