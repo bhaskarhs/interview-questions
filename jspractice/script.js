@@ -293,7 +293,7 @@ console.log(removeString("last"))
 // sorting of string , sorting of number 
 // removing one array element in other array element that a,b is the array removing the array of b element in array of a
 // inverse of matrix 
-// event bobling in javascript 
+// event boobling in javascript 
 // promises in js
 // reducer 
 // regex in js
