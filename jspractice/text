@@ -1,0 +1,489 @@
+// let a = [2,4,5,1]
+// //expected result = [1,5,4,2]
+// let result =[]
+// console.log(result);
+// for(let i=a.length-1;i>=0;i--){
+//     result.push(a[i])
+// }
+// console.log(result);
+
+// function flatenThearray (arr){
+
+//     let flattenArray=[];
+//     for(let i=0;i<arr.length;i++){
+//         if(Array.isArray(arr[i])){
+//           let nestedarray=  flatenThearray(arr[i])
+//           flattenArray = flattenArray.concat(nestedarray)
+//         }else{
+//             flattenArray.push(arr[i])
+//         }
+//     }
+    
+//     return flattenArray
+// }
+// let a =[1,2,3,[4,[5,[7]]]]
+// let result1 = a.flat(Infinity)
+// let result = flatenThearray(a)
+// console.log(result.reverse(),result1);
+
+// class Solution {
+    
+//     peakElement(arr,n)
+//     {
+//         for(let i=0;i<arr.length;i++){
+//             if(i==0 || arr[i]>=arr[i-1]){
+//                 return 1
+//             }
+//         }
+//         return 0
+//     }
+// }
+
+// const object = new Solution
+// console.log(object.peakElement([1,2,3],3));
+
+
+// find-the-frequency of an element in an array
+
+// function occurancesofElement (arr){
+//     let occuranceObject ={}
+//     for(let i=0;i<arr.length;i++){
+//         if(occuranceObject[arr[i]]){
+//             occuranceObject[arr[i]] =occuranceObject[arr[i]] +1
+//         }else{
+//             occuranceObject[arr[i]]=1
+//         }
+//     }
+//     console.log(occuranceObject);
+// }
+
+// occurancesofElement([2,4,2,5,6,1,3,4])
+
+// duplicating the array
+// function removeDuplicates(arr){
+//     let result =[]
+//     for(let i=0;i<arr.length;i++){
+//         if(result.indexOf(arr[i])==-1){
+//             result.push(arr[i])
+//         }
+//     }
+//     return result
+// }
+// console.log(removeDuplicates([1, 2, 3, 3, 4, 4, 5,-2,-2]));
+
+// const array = [1, 2, 3, 3, 4, 4, 5];
+// const uniqueArray = array.filter((value, index, self) => self.indexOf(value) === index);
+// console.log(uniqueArray);
+
+//string
+// function findDuplicateLetters(str) {
+//     const frequencyCounter = {};
+//     const duplicates = [];
+//     let notduplicates=[]
+
+//     for (let i = 0; i < str.length; i++) {
+//       const char = str[i].toLowerCase();
+  
+//       if (char !== ' ' && frequencyCounter[char]) {
+//         if (!duplicates.includes(char)) {
+//           duplicates.push(char);
+          
+//         }
+//       } else {
+//         notduplicates.push(char)
+//         frequencyCounter[char] = true;
+//       }
+//     }
+//     console.log(notduplicates);
+//     return duplicates;
+//   }
+  
+//   const inputString = "Hello World";
+//   const duplicates = findDuplicateLetters(inputString);
+//   console.log(duplicates); // ['l', 'o']
+
+//longest word in string 
+//split the para 
+//take a variable to store longest
+//loop through split para  and add condition that longest word length with present 
+
+// function longestWord (para){
+//     let words = para.split(' ')
+//     let longestWord = ''
+//     for(let i=0;i<words.length;i++){
+//         if(longestWord.length < words[i].length){
+//             longestWord = words[i]
+//         }
+//     }
+//     return longestWord
+// }
+
+// console.log(longestWord("condin that longest word length"));
+
+/*
+reverse a para
+
+*/
+
+// function reversePara (para){
+//     let words = para.replaceAll(' ','').split('')
+//     let str=''
+//     let output=[]
+//     for(let i=words.length-1;i>0;i--){
+//         output.push(words[i])
+//     }   
+//     console.log(output.join(' '));
+// }
+// reversePara(' widely used sorting')
+
+// function reverseWordsInPara(para){
+//     let words = para.split(' ')
+//     let output =[]
+//     for(let i=words.length-1;i>0;i--){
+//         output.push(words[i])
+//     }   
+//     console.log(output.join(' '));
+// }
+
+// reverseWordsInPara(' widely used sorting')
+
+// function removeDuplicateCharInString () {
+    
+// }
+function throttle(func, delay) {
+	let lastCall = 0;
+	return function (...args) {
+		const now = new Date().getTime();
+		if (now - lastCall < delay) {
+			return;
+		}
+		lastCall = now;
+		func(...args);
+	};
+}
+
+function logMessage(message) {
+	console.log(message);
+}
+
+const throttledLogMessage = throttle(logMessage, 1000);
+
+// Logs 'Hello'
+throttledLogMessage('Hello');
+
+// Doesn't log anything
+throttledLogMessage('World');
+
+// Logs 'Delayed' after 2 seconds
+setTimeout(() => throttledLogMessage('delayed'), 2000);
+// const array = [1,223,5]
+// for (var index = 0; index < array.length; index++) {
+//     setTimeout(function(){
+//         console.log('index',+index+ ',value',array[index]);
+//     },3000)
+// }
+
+// console.log(m);
+// miniScript();
+// function miniScript() {
+//   console.log("miniScript is exploring JS");
+// }
+// var m = 10;
+
+
+//call bind and applay
+// problem statement : can we use this key word inside a function and call the object properties
+// ans is yes can do it with the help of call() method call method is a function prototype be which means that all JavaScript functions have this method available to them.
+// example
+// when applying the call method the call method takes the arguments like its present object and other arguments to pass to the function
+// function callMethodExample (...args) {
+//   console.log(this,args);
+// }
+// callMethodExample.call({name:"bhaskar"},)
+// // apply methis is similar to that of call method where we can make use of this keyword with in the function
+// callMethodExample.apply({name:"prashu"},["asdasd",123])
+
+// // bindmethod is similar to that of call but with a change that is bind will creates a new function and will have the this keyword used as same as call method
+
+// let bindFunction = callMethodExample.bind({name:"arun"},"values","asdasd")
+// bindFunction()
+
+//closers
+// A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment).
+// it means Basically, every time a function is created, a closure is also created and it gives access to the state (variables, constants, functions, and so on). The surrounding state is known as the lexical environment
+// function makeFunction(b) {
+
+//   function displayName() {
+//     console.log(name,b);
+//   }
+//   return displayName;
+// };
+// var name = 'TK';
+// makeFunction(10)();
+
+// // every function created in js will have access to its outer object varibales and function even if it running on the different thread
+// // example
+// function close (){
+//   for (let index = 0; index <5; index++) {
+//     setTimeout(()=>{
+//       console.log(index);
+//     },1000)
+//   }
+// }
+// close()
+//here everytime the settime callback function is executed in callback queuee with its outer lexcical scope i
+// every time settimeout is called it take new reference value of index as indexis now the block scope variable
+// The slice() method returns the selected elements in an array as a new array
+// The slice() method is used to extract a portion of an array or a string and returns a new array or string containing the extracted elements. It takes two arguments: the starting index and the ending index (exclusive).
+// The splice() method is used either adds/removes items to/from an array, and then returns the removed item. The first argument specifies the array position for insertion or deletion whereas the optional second argument indicates the number of elements to be deleted.
+
+// splice() method to remove or replace elements in an array. The splice() method allows you to modify an array by adding, removing, or replacing elements at a specified index.
+// splice using for loop
+// let a =[1,2,3,4,5]
+// let startIndex =2;
+// let numberofelements =2;
+// let newarray=[];
+// let replacearray=[100,200]
+// for(let i=0;i<a.length;i++){
+//   if(i<startIndex || i>=startIndex+numberofelements){
+//    newarray.push(a[i])
+//   }else if(i ===startIndex){
+//     newarray.push(...replacearray)
+//   }
+// }
+// console.log(newarray);
+
+
+
+
+// const memoizAddition = () => {
+//   let cache = {};
+//   return (value) => {
+//     if (value in cache) {
+//       console.log("Fetching from cache");
+//       return cache[value]; // Here, cache.value cannot be used as property name starts with the number which is not a valid JavaScript  identifier. Hence, can only be accessed using the square bracket notation.
+//     } else {
+//       console.log("Calculating result");
+//       let result = value + 20;
+//       cache[value] = result;
+//       return result;
+//     }
+//   };
+// };
+// // returned function from memoizAddition
+// const addition = memoizAddition();
+// console.log(addition(20)); //output: 40 calculated
+// console.log(addition(20));
+
+//merging of two array
+// bubble sort
+// var let const
+// polyfill js
+// replica
+// deep comparision
+// rest and sperad differece
+// push pop shift and unshit
+// map and set
+// debouncing and tourtling
+// polyfill for map or reducer 
+// prototype 
+//crud operationd in react
+// quiz app
+// todo app
+// flat list
+// scroll view
+// react and react native difference 
+//core components in 
+//event trotling in faltlist
+// safe are view
+// scrollview (in horizontal and vertical)
+// how to build dynamic ui
+// dimensions 
+//flex directions in react native
+//debugging a react native app
+//styling a react native component using style 
+//every component in react native accepts a prop called as style which takes name and value
+//or we can use stylesheet and then creates object and this we can add using style.objectname
+//we can set height and weight of the component using height and width props
+//we can also make use flex , generally we assign flex as 1 which occupies full sapce accoring to its parent component 
+//if the value of flex varies the space of compnent also varies according to it
+//we can also make use of % to set the height and width of component
+//flexbox in react-native is almost same as in web except that the flex direction in react native is column by default where as in web it is row by default
+
+
+
+// merging of two array
+// let a = [1,2,4,10]
+// let b =[1,100,80,70]
+
+// let result =[]
+// for(let i=0;i<a.length;i++){
+//   result.push(a[i])
+// }
+// for(let i=0;i<b.length;i++){
+//   result.push(b[i])
+// }
+
+// // removing the duplicates from the above array
+// let newarray = new Set(result)
+// console.log(result);
+
+// // count the number of occurance of each element in the array
+// // expected resultedobject = {1:2,2:2,4:1,10:1,100:1,80:1,70:1}
+
+// let countOfElements ={}
+
+// for(let i=0;i<result.length;i++){
+//   let currentElement = result[i]
+//   if(countOfElements[currentElement]){
+//     countOfElements[currentElement]++
+//   }else{
+//     countOfElements[currentElement]=1
+//   }
+// }
+// console.log(countOfElements);
+
+
+
+
+
+// multiply 2 numbers and return the product without using the operator and for loop
+
+// let a = 10;
+// let b=2;
+// let result=0
+// let isNegative=false
+// if(a<0 || b<0){
+//   isNegative = true
+// }
+// a= Math.abs(a)
+// b=Math.abs(b)
+// // result should be 20 and should not use * operator
+// for(let i=0;i<b;i++){
+//    result =result+ a
+// }
+// if(isNegative){
+//   result = -result
+// }
+// console.log(result);
+
+/*
+
+Bubble Sorting
+ needs two for loop
+1. first loop is for looping throgh the array
+2. is for comparing adjucent elemts
+
+*/
+
+// function bubbleSort(array){
+//   for(let i = 0;i<array.length-1;i++){
+//     for(let j=0;j<array.length-i-1;j++){
+//       if(array[j]>array[j+1]) {
+//         [array[j],array[j+1]] =[array[j+1],array[j]]
+//       }
+//     }
+//   }
+//   return array
+// }
+
+// console.log(bubbleSort([5, 3, 8, 2, 1, 4,-1,-120,-3]))
+
+/*
+selection sort 
+requires 2loops and a variable to get the index value
+*/
+// function selectionSort(array){
+//   for (let i = 0; i < array.length - 1; i++){
+//     let minIndex = i;
+//     for(let j=i+1;j<array.length;j++){
+    
+//       if(array[j]<array[minIndex]){
+//         minIndex=j
+//       }
+      
+//     }
+//     [array[i],array[minIndex]]=[array[minIndex],array[i]]
+//   }
+
+//   return array
+// }
+
+// console.log(selectionSort([5, 3, 8, 2, 1, 4,-1,-120,-3]));
+
+/*
+insertion sort requires 1forloop and inistail value i.e array[1] 
+will be stores in variable
+another for loop to check value of firstseclet key is less than jvalue
+and j intial value will i-1
+
+*/
+
+// function insertionSort(){
+//   const array = [5, 3, 8, 2, 1, 4,-1,-120,-3];
+
+// for (let i = 1; i < array.length; i++) {
+//   let key = array[i];
+//   for(j=i-1;j >= 0 && array[j] > key;j--){
+//     array[j + 1] = array[j];
+//   }
+//   array[j + 1] = key;
+// }
+
+// console.log(array);
+// }
+// insertionSort()
+
+/*
+Quick sort is a widely used sorting algorithm that efficiently sorts an array of elements by dividing it into smaller subarrays based on a chosen pivot element.
+1st chose pivot element
+2nd partition the array into 2sub array
+recursuvely sort the subarray and 
+last define the base case
+
+*/
+
+// function quickSort(array){
+//   if(array.length<=1) return array
+
+//   let pivoutElement =array[0]
+//   let subarray1=[]
+//   let subarray2=[]
+
+//   for(let i=1;i<array.length;i++){
+//     if(pivoutElement>array[i]){
+//       subarray1.push(array[i])
+//     }else{
+//       subarray2.push(array[i])
+//     }
+//   }
+  
+
+//   return [...quickSort(subarray1),pivoutElement,...quickSort(subarray2)]
+// }
+// console.log(quickSort([5, 3, 8, 2, 1, 4,-1,-120,-300]));
+
+
+
+//react native
+// keyfactor in faltlist
+//platform api is used to fing the os of the device 
+//safcearea view will make the content to to occupy the space in 
+// safce grid avioding the status bar, camera port and buttom back button.
+//flatlist 
+//view: is the most fundamental component for building ui 
+
+// Whenever anyone tries to run the react native platform, an extensive compilation of JavaScript files gets arranged together in a single file. This compilation is done through a bundler called metro.
+
+
+//js questions
+/*
+1. reverse a string and array 
+2. duplicates in an array and characters in string
+3. occurences of each element in an array
+Write a decorator/Function to turn the Keys as Uppercase 
+Input ={jack:"Three", jill: "Two",And:"one"};
+Expected Output= {JACK: "Three",JILL: "Two",AND: "one"}
+
+*/
+
